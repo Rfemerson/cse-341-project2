@@ -5,4 +5,8 @@ router.get('/', (req, res) => {
     res.send('Hello Emerson!')
 });
 
+router.use('/vehicles', require('./vehicles'));
+
+router.use('/drivers', require('./drivers'));
+
 module.exports = router;
