@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-const controllers = require('../controllers/drivers');
+const driversControllers = require('../controllers/drivers');
 
-router.get('/drivers', controllers.getAllDrivers);
+router.get('/drivers', driversControllers.getAllDrivers);
 
-router.get('/:id', controllers.getDriverById);
+router.get('/:id', driversControllers.getDriverById);
 
-router.post('/drivers', controllers.createDriver);
+router.post('/drivers', driversControllers.createDriver);
 
-router.put('/:id', controllers.updateDriver);
+router.put('/:id', driversControllers.updateDriver);
 
-router.delete('/:id', controllers.deleteDriver);
+router.delete('/:id', driversControllers.deleteDriver);
 
 
 module.exports = router;
