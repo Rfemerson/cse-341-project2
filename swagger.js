@@ -5,7 +5,7 @@ const doc = {
         title: 'Project 2 API',
         description: 'API for managing vehicles and drivers',
     },
-    host: 'cse-341-project1-ty88.onrender.com',
+    host: 'project2-k2u1.onrender.com',
     schemes: ['https'],
 }; 
 
