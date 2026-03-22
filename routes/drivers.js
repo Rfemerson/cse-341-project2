@@ -3,11 +3,11 @@ const router = express.Router();
 
 const driversControllers = require('../controllers/drivers');
 
-router.get('/drivers', driversControllers.getAllDrivers);
+router.get('/', driversControllers.getAllDrivers);
 
 router.get('/:id', driversControllers.getDriverById);
 
-router.post('/drivers', driversControllers.createDriver);
+router.post('/', driversControllers.createDriver);
 
 router.put('/:id', driversControllers.updateDriver);
 

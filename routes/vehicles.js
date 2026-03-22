@@ -3,11 +3,11 @@ const router = express.Router();
 
 const vehiclesControllers = require('../controllers/vehicles');
 
-router.get('/vehicles', vehiclesControllers.getAllVehicles);
+router.get('/', vehiclesControllers.getAllVehicles);
 
 router.get('/:id', vehiclesControllers.getVehicleById);
 
-router.post('/vehicles', vehiclesControllers.createVehicles);
+router.post('/', vehiclesControllers.createVehicles);
 
 router.put('/:id', vehiclesControllers.updateVehicle);
 
