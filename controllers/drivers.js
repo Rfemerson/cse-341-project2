@@ -2,12 +2,14 @@ const mongoDb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAllDrivers = async (req, res) => {
+        //#swagger.tags = ['Drivers']
     const result = await mongoDb.getDatabase().db().collection('drivers').find().toArray();
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
 };
 
 const getDriverById = async (req, res) => {
+        //#swagger.tags = ['Drivers']
     const driverId = new ObjectId(req.params.id);
     const result = await mongoDb.getDatabase().db().collection('drivers').findOne({_id: driverId});
     res.setHeader('Content-Type', 'application/json');
@@ -31,7 +33,7 @@ const createDriver = async (req, res) => {
 };
 
 const updateDriver = async (req, res) => {
-    //#swagger.tags= ['Vehicles']
+    //#swagger.tags= ['Drivers']
     const driverId = new ObjectId(req.params.id);
     const updatedDriver = {
         name: req.body.name,
@@ -48,7 +50,7 @@ const updateDriver = async (req, res) => {
 };
 
 const deleteDriver = async (req, res) => {
-    //#swagger.tags= ['Vehicles']
+    //#swagger.tags= ['Drivers']
     const driverId = new ObjectId(req.params.id);
     const response = await mongoDb.getDatabase().db().collection('drivers').deleteOne({_id: driverId}, true);
     if (response.deletedCount > 0) {

@@ -2,12 +2,14 @@ const mongoDb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAllVehicles = async (req, res) => {
+        //#swagger.tags = ['Vehicles']
     const result = await mongoDb.getDatabase().db().collection('vehicles').find().toArray();
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
 };
 
 const getVehicleById = async (req, res) => {
+        //#swagger.tags = ['Vehicles']
     const vehicleId = new ObjectId(req.params.id);
     const result = await mongoDb.getDatabase().db().collection('vehicles').findOne({_id: vehicleId});
     res.setHeader('Content-Type', 'application/json');

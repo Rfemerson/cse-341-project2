@@ -1,0 +1,79 @@
+// Local Tests
+
+### Main Route (Hello Emerson)
+GET http://localhost:3000/
+
+
+### Get all vehicles
+GET http://localhost:3000/vehicles
+
+### Get all Drivers
+GET http://localhost:3000/drivers
+
+
+### Get a specific vehicle by ID
+GET http://localhost:3000/vehicles/69ac9dbf5b733e98dd9f4ab9
+
+### Get a specific driver by ID
+GET http://localhost:3000/drivers/69ac9dbf5b733e98dd9f4ab9
+
+### Create a new vehicle
+POST http://localhost:3000/vehicles
+Content-Type: application/json
+
+{
+  "plate": "XYZ-9999",
+  "model": "Ford Explorer",
+  "year": 2023,
+  "status": "active",
+  "fuelType": "gasoline",
+  "currentMileage": 12000,
+  "lastMaintenanceDate": "2026-03-10",
+  "Deliveries": "18",
+  "createdAt": "2026-03-21"
+}
+
+### Create a new driver
+POST http://localhost:3000/drivers
+Content-Type: application/json
+
+{
+  "Name": "Chris Evans",
+  "driversLicenseNumber": 11223344556,
+  "driversLicenseExpirationDate": "2029-08-15",
+  "status": "Active"
+}
+
+### Update an existing vehicle
+PUT http://localhost:3000/vehicles/69bf2185d56077d456728ccb
+Content-Type: application/json
+
+{
+  "plate": "XYZ-9999",
+  "model": "Ford Explorer",
+  "year": 2023,
+  "status": "active",
+  "fuelType": "gasoline",
+  "currentMileage": 12000,
+  "lastMaintenanceDate": "2026-03-10",
+  "Deliveries": "18",
+  "createdAt": "2026-03-21"
+}
+
+
+### Update an existing driver
+PUT http://localhost:3000/drivers/69ac9dbf5b733e98dd9f4ab9
+Content-Type: application/json
+
+{
+  "Name": "Chris Evans",
+  "driversLicenseNumber": 11223344556,
+  "driversLicenseExpirationDate": "2029-08-15",
+  "status": "Active"
+}
+
+### Delete a vehicle
+DELETE http://localhost:3000/vehicles/69bf2185d56077d456728ccb      
+
+### Delete a driver
+DELETE http://localhost:3000/drivers/69bf29e6d56077d456728cd4      
