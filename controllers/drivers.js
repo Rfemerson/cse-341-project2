@@ -89,6 +89,13 @@ const updateDriver = async (req, res) => {
             return res.status(404).json({ message: 'Driver not found' });
         }
 
+        if (response.modifiedCount > 0) {
+            res.status(204).send();
+        } else {
+            res.status(500).json({ message: 'Error updating driver' });
+        }
+
+
     } catch (error) {
         res.status(500).json({ message: 'Error occurred while updating driver' });
     }
